@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>ML Series</title>
+    <title>ML Series - Article Contest</title>
+    	<meta name="description" content="Welcome to AI-ML Interest Group">
+    <meta name="keywords" content="ai,ml,nlp,wayanad house,iitmbs,online,article,contest,blogs">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -31,6 +33,9 @@
         color: #fff !important;
         transition: all 0.3s cubic-bezier(.4,0,.2,1);
       }
+      html {
+    scroll-behavior: smooth;
+  }
     </style>
     <link rel="icon" href="https://mlig-iitmbs.github.io/ml/assets/images/favicon.png" />
   </head>
@@ -39,8 +44,8 @@
       <nav class="container mx-auto flex items-center justify-between p-4">
         <div class="flex items-center space-x-3">
           <img src="https://cdn-icons-png.flaticon.com/128/10817/10817404.png" alt="" class="h-10 w-10 rounded" />
-          <span class="font-semibold text-xl tracking-tight">ML Series</span>
-          <span class="text-xs ml-4 px-2 py-1 rounded bg-primary/20 text-primary">Edition 2</span>
+          <span class="font-semibold text-xl tracking-tight">EPOCHS</span>
+          <span class="text-xs ml-4 px-2 py-1 rounded bg-primary/20 text-primary">2nd Edition</span>
         </div>
         <ul class="hidden md:flex items-center gap-8 text-lg">
           <li><a href="#" class="relative group px-3 py-2">Home <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span></a></li>
@@ -48,7 +53,7 @@
           <li><a href="#rules" class="relative group px-3 py-2">Rules<span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span></a></li>
           <li><a href="#faqs" class="relative group px-3 py-2">FAQs<span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span></a></li>
         </ul>
-        <a href="https://chat.whatsapp.com/HGA056Buywy9R6QHOPGmwe" target="_blank" class="inline-flex items-center px-3 py-2 border-2 border-primary rounded-full hover:bg-primary/20 transition">
+        <a href="https://chat.whatsapp.com/BJybzruXqvODRgeSw9DZUV" target="_blank" class="inline-flex items-center px-3 py-2 border-2 border-primary rounded-full hover:bg-primary/20 transition">
           <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.652.5.5 5.651.5 12c0 2.11.553 4.123 1.6 5.884l-1.81 6.275a1.001 1.001 0 0 0 1.236 1.237l6.276-1.81A11.457 11.457 0 0 0 12 23.5c6.349 0 11.5-5.151 11.5-11.5S18.349.5 12 .5zm0 21A9.5 9.5 0 1 1 21.5 12a9.489 9.489 0 0 1-9.5 9.5zm4.29-7.728c-.54-.269-1.277-.51-2.095-.267-.8.236-1.73 1.243-2.267 2.299-.545 1.077-.927 2.018-1.667 2.404-.68.349-1.395.26-2.055-.124-.397-.228-1.175-.742-1.716-1.679-.605-1.025-.985-2.324-.667-2.855.448-.739 2.383-1.287 3.585-1.287l1-.002c.45.001 1.147.058 1.817.248a6.92 6.92 0 0 0 1.965.396c.261 0 .535-.05.83-.154.287-.102 1.139-.407 1.48-1.13.116-.24.238-.53.384-.738z"/></svg>
         </a>
       </nav>
@@ -123,7 +128,6 @@
       </div>
     </section>
 
-    <!-- Rules Section + OK/NOT OK -->
     <section id="rules" class="container mx-auto py-12 px-4">
       <h2 class="text-3xl font-bold mb-4 text-primary">Guidelines & Steps to Participate</h2>
       <ol class="list-decimal pl-7 space-y-2 text-gray-800 dark:text-gray-200 text-base mb-8">
@@ -168,9 +172,7 @@
       </div>
     </section>
 
-    <!-- FAQ and Contact Section (side by side, glass morphism on right) -->
     <section id="faqs" class="container mx-auto py-14 px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
-      <!-- FAQ Accordions -->
       <div>
         <h2 class="text-3xl font-bold mb-6 text-primary">Frequently Asked Questions</h2>
         <div class="space-y-3">
@@ -213,7 +215,7 @@
           <div>
             <span class="material-icons text-primary mr-1 align-text-bottom">forum</span>
             WhatsApp queries: 
-            <a href="https://chat.whatsapp.com/HGA056Buywy9R6QHOPGmwe" target="_blank" class="inline-flex items-center font-semibold text-primary hover:underline btn-glass-hover px-3 py-1 ml-1">Join Chat</a>
+            <a href="https://chat.whatsapp.com/BJybzruXqvODRgeSw9DZUV" target="_blank" class="inline-flex items-center font-semibold text-primary hover:underline btn-glass-hover px-3 py-1 ml-1">Join Chat</a>
           </div>
         </div>
         <div class="mt-8">
@@ -222,19 +224,26 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-dark/90 border-t border-primary py-8 text-center text-sm text-gray-600 dark:text-gray-400">
-      <div class="mb-2">
-        &copy; 2025 ML Series (LogicLooM) team, All rights reserved.
-      </div>
+    <!-- footer -->
+    <footer class="bg-white dark:bg-dark/90 border-t border-primary py-8 px-4">
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-between text-sm text-gray-600 dark:text-gray-400">
+    <div class="mb-2 md:mb-0">
+      &copy; 2025 ML Series (LogicLooM) team, All rights reserved.
       <div>
         <a href="#announcements" class="hover:text-primary font-semibold">See latest updates &rarr;</a>
       </div>
-    </footer>
+    </div>
+    <div class="flex items-center">
+      <img src="1695118944298.jpeg"
+           alt="Wayanad logo"
+           class="h-12 w-12 md:h-14 md:w-14 object-contain ml-auto rounded-xl"/>
+    </div>
+  </div>
+</footer>
 
     <script>
       function updateCountdown() {
-          const deadline = new Date('2024-11-25T23:59:00+05:30');
+          const deadline = new Date('2025-09-05T23:59:00+05:30');
           const now = new Date();
           const t = deadline - now;
           const el = document.getElementById('countdown');
