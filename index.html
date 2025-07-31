@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ML Series</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F5A841",
+              accent: "#ffea61",
+              surface: "#fcfcfc",
+              dark: "#171923",
+              info: "#2A4365",
+              card: "#F4F7FE",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .btn-glass-hover:hover {
+        background: rgba(255, 255, 255, 0.25) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.14);
+        color: #fff !important;
+        transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      }
+    </style>
+    <link rel="icon" href="https://mlig-iitmbs.github.io/ml/assets/images/favicon.png" />
+  </head>
+  <body class="bg-surface min-h-screen text-gray-900 dark:bg-dark dark:text-gray-100 transition-colors duration-200">
+    <header class="sticky top-0 bg-white/90 dark:bg-dark/80 border-b border-primary z-30 backdrop-blur">
+      <nav class="container mx-auto flex items-center justify-between p-4">
+        <div class="flex items-center space-x-3">
+          <img src="https://cdn-icons-png.flaticon.com/128/10817/10817404.png" alt="" class="h-10 w-10 rounded" />
+          <span class="font-semibold text-xl tracking-tight">ML Series</span>
+          <span class="text-xs ml-4 px-2 py-1 rounded bg-primary/20 text-primary">Edition 2</span>
+        </div>
+        <ul class="hidden md:flex items-center gap-8 text-lg">
+          <li><a href="#" class="relative group px-3 py-2">Home <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span></a></li>
+          <li><a href="#domains" class="relative group px-3 py-2">Domains<span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span></a></li>
+          <li><a href="#rules" class="relative group px-3 py-2">Rules<span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span></a></li>
+          <li><a href="#faqs" class="relative group px-3 py-2">FAQs<span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span></a></li>
+        </ul>
+        <a href="https://chat.whatsapp.com/HGA056Buywy9R6QHOPGmwe" target="_blank" class="inline-flex items-center px-3 py-2 border-2 border-primary rounded-full hover:bg-primary/20 transition">
+          <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.652.5.5 5.651.5 12c0 2.11.553 4.123 1.6 5.884l-1.81 6.275a1.001 1.001 0 0 0 1.236 1.237l6.276-1.81A11.457 11.457 0 0 0 12 23.5c6.349 0 11.5-5.151 11.5-11.5S18.349.5 12 .5zm0 21A9.5 9.5 0 1 1 21.5 12a9.489 9.489 0 0 1-9.5 9.5zm4.29-7.728c-.54-.269-1.277-.51-2.095-.267-.8.236-1.73 1.243-2.267 2.299-.545 1.077-.927 2.018-1.667 2.404-.68.349-1.395.26-2.055-.124-.397-.228-1.175-.742-1.716-1.679-.605-1.025-.985-2.324-.667-2.855.448-.739 2.383-1.287 3.585-1.287l1-.002c.45.001 1.147.058 1.817.248a6.92 6.92 0 0 0 1.965.396c.261 0 .535-.05.83-.154.287-.102 1.139-.407 1.48-1.13.116-.24.238-.53.384-.738z"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Announcement Banner -->
+    <section id="announcements" class="mt-0">
+      <div class="container mx-auto flex flex-col md:flex-row items-center gap-4 px-4 py-3 bg-gradient-to-r from-primary/20 via-accent/10 to-slate-100 dark:from-primary/40 dark:via-accent/20 rounded-b">
+        <div class="flex-1 flex items-center gap-2">
+          <svg class="w-7 h-7 text-primary animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01"></path><path stroke="#F5A841" stroke-width="2" d="M18.364 5.636l.707.707m-9.9 9.9l-.707.707M17 12a5 5 0 11-10 0 5 5 0 0110 0z"></path></svg>
+          <p class="text-base md:text-lg font-medium text-primary">
+            <span class="font-semibold">New:</span> Participate in ML Article Contest (2nd Edition)! Deadline:
+            <b id="countdown" class="font-bold text-danger">Loading...</b>
+          </p>
+        </div>
+        <a href="#steps" class="inline-flex items-center gap-1 px-4 py-2 bg-primary text-white font-medium rounded shadow-sm btn-glass-hover">How to Submit <span>&rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto flex flex-col md:flex-row items-center pt-14 pb-12 px-4 gap-8">
+      <div class="flex-1">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 text-gray-900 dark:text-white">
+          ML Series : <span class="text-primary">Article Contest</span> <br>
+          <span class="text-lg font-normal text-gray-600 dark:text-gray-300">Share your AI, ML & Programming Insights for our Newsletter!</span>
+        </h1>
+        <p class="mt-3 text-lg text-gray-700 dark:text-gray-200">
+          <b>Students</b> are invited to contribute original, creative articles in
+          <span class="font-semibold text-primary">AI-ML</span>, <span class="font-semibold text-primary">programming domains</span>,
+          or <span class="font-semibold">interdisciplinary topics</span> (AI in Physics, Robotics, etc.) for our annual newsletter.
+        </p>
+        <div class="mt-4 flex gap-3">
+          <a href="https://epochs.netlify.app/" target="_blank" class="px-5 py-3 rounded bg-primary text-white font-semibold shadow btn-glass-hover">
+            Read Newsletter
+          </a>
+        </div>
+      </div>
+
+      <div class="flex-1 flex justify-center">
+        <img alt="ML Illustration" src="https://mlig-iitmbs.github.io/ml/events/epochs/ml1.png" class="w-72 md:w-[24rem] rounded-lg shadow-xl border-4 border-primary/30" />
+      </div>
+    </section>
+    
+
+    <!-- Domains Section -->
+    <section id="domains" class="bg-card dark:bg-dark/70 py-10">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">Domains & Topics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-900 shadow-lg rounded-xl p-7 text-center transition hover:scale-105 hover:shadow-xl border-primary/30 border">
+            <div class="flex justify-center mb-4">
+              <span class="material-icons text-primary text-5xl">smart_toy</span>
+            </div>
+            <h3 class="font-semibold text-xl mb-2">AI · Machine Learning</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">AI, ML, Deep Learning, NLP, Computer Vision, GenAI, Cybersecurity, Data Science, Stats & Related.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-900 shadow-lg rounded-xl p-7 text-center transition hover:scale-105 hover:shadow-xl border-primary/30 border">
+            <div class="flex justify-center mb-4">
+              <span class="material-icons text-primary text-5xl">code</span>
+            </div>
+            <h3 class="font-semibold text-xl mb-2">Programming · Theory</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">Languages, SW Engineering, Compilers, Databases, Hardware, Security, Algorithms, Complexity, Cryptography.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-900 shadow-lg rounded-xl p-7 text-center transition hover:scale-105 hover:shadow-xl border-primary/30 border">
+            <div class="flex justify-center mb-4">
+              <span class="material-icons text-primary text-5xl">integration_instructions</span>
+            </div>
+            <h3 class="font-semibold text-xl mb-2">Interdisciplinary</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">Applications in Economics, Physics, Quantum Computing, Robotics, Biomed, Business, Healthcare, Social Impact, etc.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rules Section + OK/NOT OK -->
+    <section id="rules" class="container mx-auto py-12 px-4">
+      <h2 class="text-3xl font-bold mb-4 text-primary">Guidelines & Steps to Participate</h2>
+      <ol class="list-decimal pl-7 space-y-2 text-gray-800 dark:text-gray-200 text-base mb-8">
+        <li>Work must be <span class="font-semibold text-primary">original, unpublished</span>. Plagiarism or re-posted content is strictly not allowed.</li>
+        <li>Avoid AI-generated content — let your own insights shine!</li>
+        <li>Language: English only this edition.</li>
+        <li>One submission per author/team; you <b>can revise</b> and resubmit till deadline.</li>
+        <li><b>Max 3 pages</b> per article. Cite references as needed.</li>
+        <li>Submissions are reviewed by Wayanad House core team; decisions are final.</li>
+        <li>Shortlisted articles will be featured in our newsletter (with author credits & certificates for all entries).</li>
+      </ol>
+      
+      <div class="bg-accent/10 p-5 rounded-lg border-l-4 border-primary mb-3 text-primary font-semibold flex items-center gap-2">
+        <span class="material-icons">star</span>
+        <span>
+          If you previously participated in our ML Challenges, you may write about your methods, findings, or team experiences!
+        </span>
+      </div>
+      
+      
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="bg-green-50 dark:bg-green-800/40 border border-green-300 dark:border-green-500 rounded-xl flex-1 p-6 mb-3 shadow hover:scale-105 hover:shadow-lg transition">
+          <h3 class="font-semibold text-xl text-green-600 mb-4 flex items-center gap-2"><span class="material-icons">check_circle</span>OK</h3>
+          <ul class="list-disc pl-5 space-y-2 text-green-700 dark:text-green-100">
+            <li>Original insights, experiments, findings, methods or reviews.</li>
+            <li>Team collaborations (if you participated in ML Challenge as a team).</li>
+            <li>Well-cited, clear, and creative writing.</li>
+            <li>Fresh articles (not posted/published elsewhere).</li>
+            <li>Articulate experiences from previous Wayanad House ML contests.</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 dark:bg-red-800/40 border border-red-300 dark:border-red-500 rounded-xl flex-1 p-6 mb-3 shadow hover:scale-105 hover:shadow-lg transition">
+          <h3 class="font-semibold text-xl text-red-600 mb-4 flex items-center gap-2"><span class="material-icons">highlight_off</span>NOT OK</h3>
+          <ul class="list-disc pl-5 space-y-2 text-red-700 dark:text-red-100">
+            <li>AI-generated or plagiarized content.</li>
+            <li>Articles published elsewhere (blogs, Medium, etc).</li>
+            <li>Non-English submissions.</li>
+            <li>Multiple submissions from a single person/team.</li>
+            <li>Uncited work, lack of clarity, or disrespectful language.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ and Contact Section (side by side, glass morphism on right) -->
+    <section id="faqs" class="container mx-auto py-14 px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- FAQ Accordions -->
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-primary">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          <!-- FAQ 1 -->
+          <details class="group rounded-xl bg-white dark:bg-dark/80 shadow border-primary/30 border px-6 py-4 transition-all">
+            <summary class="text-lg font-medium cursor-pointer group-open:text-primary transition">Can I submit an article as a team?</summary>
+            <p class="mt-2 text-gray-700 dark:text-gray-200">Yes! Collaborative articles are encouraged, especially if you participated as a team in previous ML contests.</p>
+          </details>
+          <!-- FAQ 2 -->
+          <details class="group rounded-xl bg-white dark:bg-dark/80 shadow border-primary/30 border px-6 py-4 transition-all">
+            <summary class="text-lg font-medium cursor-pointer group-open:text-primary transition">Can I update or revise my article after initial submission?</summary>
+            <p class="mt-2 text-gray-700 dark:text-gray-200">Absolutely! You can revise and resubmit your article any time before the deadline.</p>
+          </details>
+          <!-- FAQ 3 -->
+          <details class="group rounded-xl bg-white dark:bg-dark/80 shadow border-primary/30 border px-6 py-4 transition-all">
+            <summary class="text-lg font-medium cursor-pointer group-open:text-primary transition">Are code snippets or diagrams allowed?</summary>
+            <p class="mt-2 text-gray-700 dark:text-gray-200">Yes, as long as they are relevant and clearly presented, and you cite any sources if not original.</p>
+          </details>
+          <!-- FAQ 4 -->
+          <details class="group rounded-xl bg-white dark:bg-dark/80 shadow border-primary/30 border px-6 py-4 transition-all">
+            <summary class="text-lg font-medium cursor-pointer group-open:text-primary transition">Do I get a certificate for participation?</summary>
+            <p class="mt-2 text-gray-700 dark:text-gray-200">Yes! Every submitted article (meeting guidelines) earns a digital certificate from Wayanad House.</p>
+          </details>
+          <!-- FAQ 5 -->
+          <details class="group rounded-xl bg-white dark:bg-dark/80 shadow border-primary/30 border px-6 py-4 transition-all">
+            <summary class="text-lg font-medium cursor-pointer group-open:text-primary transition">How will I be notified if my article is selected?</summary>
+            <p class="mt-2 text-gray-700 dark:text-gray-200">You’ll get an email at your registered address once selections are announced.</p>
+          </details>
+        </div>
+      </div>
+      <!-- Contact Block -->
+      <div class="flex flex-col justify-center bg-white/70 dark:bg-dark/80 glassmorphism rounded-2xl p-8 shadow-xl border-primary/20 border hover:shadow-2xl transition">
+        <h2 class="text-3xl font-bold text-primary mb-6">Contact & Support</h2>
+        <div class="flex flex-col space-y-4 text-gray-700 dark:text-gray-200">
+          <div>
+            <span class="material-icons text-primary mr-1 align-text-bottom">email</span>
+            <span>Email: </span>
+            <a href="mailto:wayanad-ml@ds.study.iitm.ac.in" class="text-primary font-semibold hover:underline">wayanad-ml@ds.study.iitm.ac.in</a>
+          </div>
+          <div>
+            <span class="material-icons text-primary mr-1 align-text-bottom">forum</span>
+            WhatsApp queries: 
+            <a href="https://chat.whatsapp.com/HGA056Buywy9R6QHOPGmwe" target="_blank" class="inline-flex items-center font-semibold text-primary hover:underline btn-glass-hover px-3 py-1 ml-1">Join Chat</a>
+          </div>
+        </div>
+        <div class="mt-8">
+          <span class="text-xs text-gray-500">Please mention "Article contest" in the subject while mailing.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-dark/90 border-t border-primary py-8 text-center text-sm text-gray-600 dark:text-gray-400">
+      <div class="mb-2">
+        &copy; 2025 ML Series (LogicLooM) team, All rights reserved.
+      </div>
+      <div>
+        <a href="#announcements" class="hover:text-primary font-semibold">See latest updates &rarr;</a>
+      </div>
+    </footer>
+
+    <script>
+      function updateCountdown() {
+          const deadline = new Date('2024-11-25T23:59:00+05:30');
+          const now = new Date();
+          const t = deadline - now;
+          const el = document.getElementById('countdown');
+          if(t <= 0) { el.textContent = 'Submission closed.'; el.classList.add('text-red-500','font-bold'); return; }
+          const d = Math.floor(t/(1e3*60*60*24)),
+                h = Math.floor((t%(1e3*60*60*24))/(1e3*60*60)),
+                m = Math.floor((t%(1e3*60*60))/(1e3*60)),
+                s = Math.floor((t%(1e3*60))/1e3);
+          el.textContent = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+      } setInterval(updateCountdown,1000); updateCountdown();
+    </script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </body>
+</html>
