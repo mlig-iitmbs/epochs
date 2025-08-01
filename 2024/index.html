@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ML Series - Article Contest</title>
+<meta name="title" content="ML Series">
+<meta name="description" content="2024 Archives">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mlig-iitmbs.github.io/epochs/">
+<meta property="og:title" content="ML Series">
+<meta property="og:description" content="ML Series is an initiative by the LogicLooM team">
+<meta property="og:image" content="https://mlig-iitmbs.github.io/favicon.ico">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mlig-iitmbs.github.io">
+<meta property="twitter:title" content="ML Series">
+<meta property="twitter:description" content="2024 Archives">
+<meta property="twitter:image" content="">
+<link rel="shortcut icon" href="https://mlig-iitmbs.github.io/favicon.ico"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+<style>
+:root {
+  --accent-color: #f5a841;
+}
+
+section [class^="container"] {
+  padding: 4rem 2rem;
+}
+@media screen and (min-width: 1024px) {
+  section [class^="container"] {
+    padding: 4rem;
+  }
+  nav [class^="container"] {
+    padding: 0 4rem;
+  }
+}
+
+section:not(:first-of-type) {
+  text-align: center;
+}
+
+section:nth-child(2n) {
+  background-color: #ecf2ff;
+}
+
+.container a {
+  color: #000000;
+  text-decoration: none;
+}
+.container a:hover {
+  color: var(--accent-color);
+}
+
+section .card,
+.btn-outline-dark {
+  border: 2px solid #000000;
+  box-shadow: 4px 4px #000000;
+  transition: all 0.4s;
+}
+.btn-outline-dark:hover {
+  box-shadow: 4px 4px var(--accent-color);
+}
+
+/* NAVBAR */
+
+.navbar {
+  background-color: #ffffff;
+}
+
+.navbar-nav .nav-link {
+  color: #000000;
+  font-size: 1.1rem;
+  transition: all 0.5s;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--accent-color);
+}
+@media screen and (min-width: 1024px) {
+  .navbar-nav .nav-item {
+    padding: 0 1rem;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+/* HERO */
+
+section.hero {
+  padding-top: 72px;
+}
+@media screen and (max-width: 576px) {
+  section.hero {
+    text-align: center;
+  }
+  section.hero img {
+    width: 80%;
+    margin: 0.5rem 0;
+  }
+}
+
+/* SERVICES */
+
+section.services i {
+  font-size: 2rem;
+  margin: 1rem auto 0;
+  border: 2px solid #000000;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-color);
+}
+
+section .card {
+  max-width: 22rem;
+  margin-inline: auto;
+}
+/* ABOUT */
+@media screen and (min-width: 1024px) {
+  section.about .container,
+  section.testimonials .container {
+    width: 80%;
+  }
+}
+
+/* PROJECTS */
+section.projects .card {
+  max-width: 17rem;
+  text-align: left;
+}
+section.projects .card img {
+  max-width: 70%;
+  margin: 1rem auto;
+}
+
+/* TESTIMONIALS */
+
+section.testimonials .carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+section.testimonials .carousel-item p {
+  max-width: 80%;
+  border-left: 5px solid var(--accent-color);
+  padding-left: 1rem;
+  text-align: left;
+}
+section.testimonials .carousel-item h5 {
+  text-align: left;
+}
+section.testimonials .carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.testimonials .carousel.carousel-fade .carousel-item {
+  transition: opacity 0.5s;
+}
+/* CONTACT */
+section.contact .social-media a {
+  padding: 0 0.5rem;
+  font-size: 1.3rem;
+}
+</style>
+<style>
+.timer-container {
+            font-size: 15px;
+            padding: 15px;
+            background-color: rgba(255,255,0,0.3);
+            border-radius: 10px;
+            display: inline-block;
+            color:red;
+        }
+        .timer {
+            font-size: 15px;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            color: red;
+        }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <div class="container-lg">
+    <a class="navbar-brand fw-bold" href=""><img src="https://cdn-icons-png.flaticon.com/128/10817/10817404.png" height="50" width="50"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/epochs">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Themes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">Rules</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="steps-article-contest.pdf">Guide</a>
+        </li>
+      </ul>
+      <!--<a href="" target="_blank" class="btn btn-outline-dark d-none d-lg-block">Upload <i class="bi bi-link-45deg"></i></a>
+      &nbsp;&nbsp;--><a href="https://chat.whatsapp.com/HGA056Buywy9R6QHOPGmwe" target="_blank" class="btn btn-outline-dark d-none d-lg-block"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="container-lg">
+    <div class="row align-items-center">
+      <div class="col-sm-6">
+        <h1 class="display-2 fw-bold">Article Contest</h1>
+        <p>We invite students to contribute articles in the <b>AI-ML and programming domains (including interdisciplinary topics such as AI in Physics, Robotics and more) for our annual newsletter</b>. We are looking for fresh insights, any findings, and thoughtful analyses that engage our community.
+        </p>
+         <a href="https://epochs.netlify.app" target="_blank"><button class="btn btn-outline-dark btn-lg">Read Newsletter <i class="bi bi-rocket-takeoff-fill"></i></button></a>
+        <br><br><div class="timer-container">
+        <div id="countdown"><!--Submission closes in --><b><span id="timer">Loading...</span></b></div>
+    </div>
+      </div>
+      <div class="col-sm-6 text-center">
+        <img src="ml1.png" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="display-5 fw-bold mb-4">Domains</h2>
+    <div class="row">
+      <div class="col-lg col-sm-6 mt-4">
+        <div class="card">
+          <i class="bi bi-alexa"></i>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">AI-ML</h5>
+            <p class="card-text"><a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">AI</a>, <a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank">ML</a>, <a href="https://en.wikipedia.org/wiki/Natural_language_processing" target="_blank">Natural Language Processing</a>, 
+              <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank">Deep Learning</a>, <a href="https://en.wikipedia.org/wiki/Computer_vision" target="_blank">Computer Vision</a>, <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence" target="_blank">GenAI</a>, 
+              <a href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank">Cyber security</a>, <a href="https://en.wikipedia.org/wiki/Data_science" target="_blank">Data Science</a>, <a href="https://en.wikipedia.org/wiki/Statistics" target="_blank">Stats</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg col-sm-6 mt-4">
+        <div class="card">
+          <i class="bi bi-code-square"></i>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">CS-TCS</h5>
+            <p class="card-text"><a href="https://en.wikipedia.org/wiki/Programming_language" target="_blank">Programming Languages</a>, <a href="https://en.wikipedia.org/wiki/Software_engineering" target="_blank">Software engg</a>, <a href="https://en.wikipedia.org/wiki/Compiler" target="_blank">compilers</a>, <a href="https://en.wikipedia.org/wiki/Database" target="_blank">databases</a>, <a href="https://en.wikipedia.org/wiki/Hardware_security" target="_blank">hardware & security</a>, <a href="https://en.wikipedia.org/wiki/Algorithm" target="_blank">Algorithms</a>, <a href="https://www.wikiwand.com/en/articles/Computational_complexity" target="_blank">Complexity</a>, <a href="https://en.wikipedia.org/wiki/Cryptography" target="_blank">Cryptography</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg col-sm-6 m-auto mt-4">
+        <div class="card">
+          <i class="bi bi-robot"></i>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Interdisciplinary</h5>
+            <p class="card-text">Applications of <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">AI</a> in <a href="https://en.wikipedia.org/wiki/Economics" target="_blank">Economics</a>, <a href="https://en.wikipedia.org/wiki/Physics" target="_blank">Physics</a>, 
+              <a href="https://en.wikipedia.org/wiki/Quantum_computing" target="_blank">Quantum Computing</a>, <a href="https://en.wikipedia.org/wiki/Robotics" target="_blank">Robotics</a>, 
+              <a href="https://en.wikipedia.org/wiki/Biology" target="_blank">Biomed</a>, <a href="https://en.wikipedia.org/wiki/Finance" target="_blank">Business and Finance</a>, 
+              <a href="https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare" target="_blank">Healthcare</a> etc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <h2 class="display-5 fw-bold mb-4">Instructions</h2>
+     <p style="text-align: justify;"><b><font color="green">Participants from our previous ML Challenge editions with decent, effective model scores can consider writing articles on their methodology, 
+                  findings (regarding techniques used, what improved the performance, model architecture etc.) itself. This would be
+                interesting! We encourage you all to do this. If you had participated as a team back then, you can collaborate to write, as well.</font></b>
+              </p>
+
+              <p style="text-align: justify;">
+                <b>Submission Guidelines</b><br>
+1. Goes without saying, content must be original i.e. written by you and free from any copyright claims by third parties. No plagiarism pls, urgh!<br>
+2. Articles should not have been posted elsewhere.<br>
+3. Please ensure that the work is free from AI-generated content (like GPT etc).<br>
+4. Regrettably, English will be the only language accepted this time.<br>
+5. You can make one submission only. You can revise and submit it anytime before deadline.<br>
+6. It should be crisp, try to align with this page limit - max. number of pages can be 3. Cite references wherever applicable.</br>
+7. Acceptance to showcase a blog on our site depends on the initiative core team and whatever decided is final. No queries to be entertained about this.<br>
+8. If the submitted article is approved from our end, the same cannot be posted/shared in other platforms.
+<br><br>
+                <font color="blue"><b><i class="bi bi-check-circle-fill"></i> Shortlisted articles will be featured in our newsletter, making it a special highlight! Participation certificate will be provided by the house for each submission.</b></font>
+              </p>
+  </div>
+</section>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Schedule</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Task</th>
+                    <th>Deadline</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Announcement</td>
+                    <td>28th October 2024</td>
+                    <td>Details about the article contest</td>
+                </tr>
+                <tr>
+                    <td>Submissions Begin</td>
+                    <td>10th November 2024</td>
+                    <td>(via our portal upload)</td>
+                </tr>
+                <tr>
+                    <td>Final Deadline for Submissions</td>
+                    <td>10th November 2024</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Peer Reviews Due</td>
+                    <td>25th November 2024</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Reviews released with comments, suggestions, points & confidence score</td>
+                    <td>25th November 2024 - 1st December 2024</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Replies to Peer Reviews</td>
+                    <td>25th November 2024 - 1st December 2024</td>
+                    <td>Replies/Questions by participants to reviewer comments</td>
+                </tr>
+                <tr>
+                    <td>Reviewing Peer Reviews</td>
+                    <td>2nd December 2024 - 5th December 2024</td>
+                    <td>Reviewing peer reviews and replies</td>
+                </tr>
+                <tr>
+                    <td>Final Decision Released</td>
+                    <td>5th December 2024</td>
+                    <td>Final decision on submissions</td>
+                </tr>
+                <tr>
+                    <td>Revised Submissions for Approved Cases</td>
+                    <td>By 10th December 2024</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Release of e-Newsletter</td>
+                    <td>By December end</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--<section class="testimonials" id="testimonials">
+  <div class="container">
+    <h2 class="display-5 fw-bold mb-4">Testimonials</h2>
+    <div id="carouselExample" class="carousel slide carousel-dark carousel-fade">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <p>"feedback1" </p>
+          <h5>John Doe</h5>
+        </div>
+        <div class="carousel-item">
+          <p>"feedback2"
+          </p>
+          <h5>June Doe</h5>
+        </div>
+        <div class="carousel-item">
+          <p>"feedback3" </p>
+          <h5>Johnny Doe</h5>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>-->
+
+
+<footer class="text-center p-3 bg-body-tertiary">
+  <div>Any Questions? Write to <a href="mailto:logicloom@ds.study.iitm.ac.in" target="_blank">logicloom@ds.study.iitm.ac.in</a></div>
+</footer>
+<script>
+        function updateCountdown() {
+            const deadline = new Date('2024-11-25T23:59:00+05:30');
+            const now = new Date();
+            const timeRemaining = deadline - now;
+
+            if (timeRemaining <= 0) {
+                document.getElementById('timer').innerHTML = 'Submission closed';
+                return;
+            }
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            const timerDisplay = `${days}d:${padZero(hours)}h:${padZero(minutes)}m:${padZero(seconds)}s`;
+
+            const timerElement = document.getElementById('timer');
+            timerElement.innerHTML = timerDisplay;
+        }
+
+        function padZero(num) {
+            return num < 10 ? '0' + num : num;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>  
+</body>
+</html>
